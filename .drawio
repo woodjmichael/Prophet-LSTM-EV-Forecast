@@ -1,0 +1,46 @@
+<mxfile host="65bd71144e">
+    <diagram id="_yPnl8V4pl2GwMaPMfog" name="Page-1">
+        <mxGraphModel dx="1116" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Office PC" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="40" width="200" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;b&gt;.h5 file&lt;/b&gt;&lt;br&gt;&lt;br&gt;LSTM layers = 1&lt;br&gt;&lt;br&gt;LSTM units = 24&lt;br&gt;&lt;br&gt;attention = yes&lt;br&gt;&lt;br&gt;weights = random&lt;br&gt;biases = random" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="100" width="120" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Office PC" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="40" width="200" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;b&gt;.h5 file&lt;/b&gt;&lt;br&gt;&lt;br&gt;LSTM layers = 1&lt;br&gt;&lt;br&gt;LSTM units = 24&lt;br&gt;&lt;br&gt;attention = yes&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#007fff&quot;&gt;weights = optimal&lt;br&gt;biases = optimal&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="100" width="120" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="shape=flexArrow;endArrow=classic;html=1;fontColor=#007FFF;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="300" y="159.5" as="sourcePoint"/>
+                        <mxPoint x="370" y="159.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="Training" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#007FFF;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="90" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Microgrid PC" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="400" width="200" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;b&gt;.h5 file&lt;/b&gt;&lt;br&gt;&lt;br&gt;LSTM layers = 1&lt;br&gt;&lt;br&gt;LSTM units = 24&lt;br&gt;&lt;br&gt;attention = yes&lt;br&gt;&lt;br&gt;weights = optimal&lt;br&gt;biases = optimal" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="460" width="120" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="shape=flexArrow;endArrow=classic;html=1;fontColor=#007FFF;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="539.5" y="310" as="sourcePoint"/>
+                        <mxPoint x="539.5" y="370.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="&lt;font color=&quot;#f0f0f0&quot;&gt;Copy-paste&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#007FFF;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="320" width="70" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
