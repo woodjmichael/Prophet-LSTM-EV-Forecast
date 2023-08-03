@@ -46,7 +46,7 @@ def create_model_attention(model_opt, train_X, train_y):
                                                      return_state=True)(input_train)
     attention_layer = attention()(ENC_layer)
     decoder = RepeatVector(output_train.shape[1])(attention_layer)
-    decoder = LSTM(model_opt['LSTM_num_hidden_units'][0],
+    decoder = LSTM(model_opt['LSTM_num_hidden_units'][1],
                    return_state=False,
                    return_sequences=True)(decoder, initial_state=[encoder_last_h, encoder_last_c])
     outputs = TimeDistributed(Dense(output_train.shape[2]))(decoder)     #Dense(dense_units, trainable=True, activation=activation)(decoder)
@@ -60,7 +60,7 @@ def create_model_attention(model_opt, train_X, train_y):
                                               restore_best_weights=True,
                                               verbose=1)
     # Create a callback that saves the model's weights
-    ckpt_callback = callbacks.ModelCheckpoint(model_opt["model_path"] + 'model_callback.h5',
+    ckpt_callback = callbacks.ModelCheckpoint(model_opt["model_path"] + '.h5',
                                               save_best_only=True,
                                               save_weights_only=False,
                                               monitor='loss',

@@ -149,7 +149,8 @@ def plot_weekly(ds,
         else:
             plt.plot(t,ds2.values.reshape(n_weeks,7*dpd).T,alpha=alpha)
     plt.ylabel(ylabel)
-    plt.xlabel('Days from Monday 0:00')
+    if begin_on_monday:
+        plt.xlabel('Days from Monday 0:00')
     plt.title(title)
     if len(ds)>1:
         legend_items = []
