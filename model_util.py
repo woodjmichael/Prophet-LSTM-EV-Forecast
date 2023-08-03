@@ -60,7 +60,7 @@ def create_model_attention(model_opt, train_X, train_y):
                                               restore_best_weights=True,
                                               verbose=1)
     # Create a callback that saves the model's weights
-    ckpt_callback = callbacks.ModelCheckpoint(model_opt["model_path"] + 'callback_model.h5',
+    ckpt_callback = callbacks.ModelCheckpoint(model_opt["model_path"] + 'model_callback.h5',
                                               save_best_only=True,
                                               save_weights_only=False,
                                               monitor='loss',
