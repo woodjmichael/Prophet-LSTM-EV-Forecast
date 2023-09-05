@@ -111,6 +111,7 @@ def plot_weekly(ds,
                 ylabel:str=None,
                 alpha:float=0.1,
                 begin_on_monday:bool=True,
+                n_days:int=7,
                 colors:list=['indigo','gold','magenta']):
     """ Plot a series with weeks super-imposed on each other. Index should be complete (no gaps)
     for this to work right. Trims any remaining data after an integer number of weeks.
@@ -122,6 +123,7 @@ def plot_weekly(ds,
         interval_min (int): timeseries data interval
         alpha (float, optional): transparency of plot lines, defaults to 0.1
         begin_on_monday (bool, optional): have the first day on the plot be monday, defaults to True
+        n_days (int,optional): if only doing weekdays use 5, weekends use 2
         colors (list, optional): list of colors strings
     """
     if not isinstance(ds,(list,tuple)):
@@ -131,7 +133,7 @@ def plot_weekly(ds,
     interval_min = int(ds[0].index.to_series().diff().mean().seconds/60)
     dpd = int(24*60/interval_min) # data per day
     plt.figure(figsize=(10,5))
-    t = [x/dpd for x in range(7*dpd)] # days    
+    t = [x/dpd for x in range(n_days*dpd)] # days    
 
     for ds2,color in zip(ds,colors):
         ds2 = ds2.copy(deep=True)
@@ -139,15 +141,15 @@ def plot_weekly(ds,
         if dt_start != dt_start.floor('1d'):
             dt_start = dt_start.floor('1d') + pd.Timedelta(hours=24)
         if begin_on_monday and (dt_start.weekday() != 0):
-            days = 7 - dt_start.weekday()
+            days = n_days - dt_start.weekday()
             dt_start += pd.Timedelta(hours=24*days)
         ds2 = ds2[dt_start:]
-        n_weeks = len(ds2)//(7*dpd)
-        ds2 = ds2.iloc[:int(n_weeks*7*dpd)]
+        n_weeks = len(ds2)//(n_days*dpd)
+        ds2 = ds2.iloc[:int(n_weeks*n_days*dpd)]
         if len(ds)>1:
-            plt.plot(t,ds2.values.reshape(n_weeks,7*dpd).T,color,alpha=alpha)
+            plt.plot(t,ds2.values.reshape(n_weeks,n_days*dpd).T,color,alpha=alpha)
         else:
-            plt.plot(t,ds2.values.reshape(n_weeks,7*dpd).T,alpha=alpha)
+            plt.plot(t,ds2.values.reshape(n_weeks,n_days*dpd).T,alpha=alpha)
     plt.ylabel(ylabel)
     if begin_on_monday:
         plt.xlabel('Days from Monday 0:00')
